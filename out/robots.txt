@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://zaruretrecords.com/sitemap.xml
