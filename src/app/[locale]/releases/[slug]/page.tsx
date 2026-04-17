@@ -2,12 +2,12 @@ import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
-import { releases } from "@/lib/mock-data";
+import { getRelease, getReleases, getArtist } from "@/lib/content";
 import { JsonLd, releaseSchema } from "@/lib/seo";
 import { SpotifyEmbed, YouTubeEmbed } from "@/components/media/SpotifyEmbed";
 
 export async function generateStaticParams() {
-  return releases.map((r) => ({ slug: r.slug }));
+  return getReleases().map((r) => ({ slug: r.slug }));
 }
 
 export async function generateMetadata({
@@ -16,14 +16,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { slug } = await params;
-  const release = releases.find((r) => r.slug === slug);
+  const release = getRelease(slug);
   if (!release) return {};
+  const artistName = getArtist(release.artistSlug)?.name ?? release.artistSlug;
   return {
-    title: `${release.title} — ${release.artist}`,
-    description: `${release.artist} — ${release.title}. ${release.year} Zaruret Records release.`,
+    title: `${release.title} — ${artistName}`,
+    description: `${artistName} — ${release.title}. ${release.year} Zaruret Records release.`,
     openGraph: {
-      title: `${release.title} — ${release.artist}`,
-      description: `${release.artist} — ${release.title}. ${release.year}.`,
+      title: `${release.title} — ${artistName}`,
+      description: `${artistName} — ${release.title}. ${release.year}.`,
       images: [release.cover],
     },
   };
@@ -36,12 +37,13 @@ export default async function ReleasePage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const release = releases.find((r) => r.slug === slug);
+  const release = getRelease(slug);
   if (!release) notFound();
+  const artistName = getArtist(release.artistSlug)?.name ?? release.artistSlug;
 
   return (
     <>
-      <JsonLd data={releaseSchema(release)} />
+      <JsonLd data={releaseSchema({ ...release, artist: artistName })} />
       <section className="pt-40 pb-24">
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -67,7 +69,7 @@ export default async function ReleasePage({
               href={`/roster/${release.artistSlug}`}
               className="mt-4 inline-block text-xl text-fg-muted hover:text-accent transition-colors"
             >
-              {release.artist}
+              {artistName}
             </Link>
 
             <div className="mt-12 space-y-6">
@@ -85,7 +87,7 @@ export default async function ReleasePage({
             {release.youtubeId && (
               <div className="mt-12">
                 <div className="eyebrow mb-4">Music Video</div>
-                <YouTubeEmbed id={release.youtubeId} title={`${release.title} — ${release.artist}`} />
+                <YouTubeEmbed id={release.youtubeId} title={`${release.title} — ${artistName}`} />
               </div>
             )}
 

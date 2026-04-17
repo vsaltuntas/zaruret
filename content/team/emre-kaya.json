@@ -1,0 +1,10 @@
+{
+  "slug": "emre-kaya",
+  "name": "Emre Kaya",
+  "role": {
+    "tr": "Baş Mühendis",
+    "en": "Chief Engineer"
+  },
+  "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80",
+  "order": 3
+}

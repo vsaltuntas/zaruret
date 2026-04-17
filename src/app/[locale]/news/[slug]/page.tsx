@@ -2,10 +2,10 @@ import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
-import { news } from "@/lib/mock-data";
+import { getNews, getNewsPost } from "@/lib/content";
 
 export async function generateStaticParams() {
-  return news.map((p) => ({ slug: p.slug }));
+  return getNews().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  const post = news.find((p) => p.slug === slug);
+  const post = getNewsPost(slug);
   if (!post) return {};
   const loc = locale as "tr" | "en";
   return {
@@ -35,7 +35,7 @@ export default async function NewsPostPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const post = news.find((p) => p.slug === slug);
+  const post = getNewsPost(slug);
   if (!post) notFound();
 
   const loc = locale as "tr" | "en";
@@ -72,17 +72,8 @@ export default async function NewsPostPage({
       </div>
 
       <article className="py-16">
-        <div className="container-site max-w-3xl prose prose-invert text-fg-muted leading-relaxed space-y-6">
-          <p>
-            {locale === "tr"
-              ? "Bu haberin detaylı içeriği yakında burada yayınlanacak. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              : "The full story will appear here soon. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
-          </p>
-          <p>
-            {locale === "tr"
-              ? "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-              : "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}
-          </p>
+        <div className="container-site max-w-3xl prose prose-invert text-fg-muted leading-relaxed space-y-6 whitespace-pre-wrap">
+          {post.body?.[loc] || post.excerpt[loc]}
         </div>
       </article>
     </>

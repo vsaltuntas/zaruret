@@ -4,13 +4,21 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import { releases } from "@/lib/mock-data";
+import type { Release, Artist } from "@/lib/content";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ArrowUpRight } from "lucide-react";
 
-export function LatestReleases() {
+export function LatestReleases({
+  releases,
+  artists,
+}: {
+  releases: Release[];
+  artists: Artist[];
+}) {
   const t = useTranslations("sections");
   const latest = releases.slice(0, 6);
+  const artistName = (slug: string) =>
+    artists.find((a) => a.slug === slug)?.name ?? slug;
 
   return (
     <section className="section border-t border-border">
@@ -56,7 +64,7 @@ export function LatestReleases() {
                 <div className="mt-3">
                   <div className="text-sm font-medium truncate">{r.title}</div>
                   <div className="text-xs text-fg-muted flex items-center justify-between mt-1">
-                    <span className="truncate">{r.artist}</span>
+                    <span className="truncate">{artistName(r.artistSlug)}</span>
                     <span className="uppercase tracking-wider text-[10px]">{r.type}</span>
                   </div>
                 </div>

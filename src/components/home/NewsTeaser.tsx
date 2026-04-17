@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import { news } from "@/lib/mock-data";
+import type { NewsPost } from "@/lib/content";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ArrowUpRight } from "lucide-react";
 
-export function NewsTeaser() {
+export function NewsTeaser({ news }: { news: NewsPost[] }) {
   const t = useTranslations("sections");
   const locale = useLocale() as "tr" | "en";
 

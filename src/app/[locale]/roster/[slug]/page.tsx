@@ -2,12 +2,12 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
-import { artists, releases } from "@/lib/mock-data";
+import { getArtists, getArtist, getReleasesByArtist } from "@/lib/content";
 import { Instagram, Youtube, Music2, ArrowUpRight } from "lucide-react";
 import { JsonLd, artistSchema } from "@/lib/seo";
 
 export async function generateStaticParams() {
-  return artists.map((a) => ({ slug: a.slug }));
+  return getArtists().map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  const artist = artists.find((a) => a.slug === slug);
+  const artist = getArtist(slug);
   if (!artist) return {};
   const loc = locale as "tr" | "en";
   return {
@@ -38,10 +38,10 @@ export default async function ArtistPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("pages.roster");
-  const artist = artists.find((a) => a.slug === slug);
+  const artist = getArtist(slug);
   if (!artist) notFound();
 
-  const discography = releases.filter((r) => r.artistSlug === artist.slug);
+  const discography = getReleasesByArtist(artist.slug);
   const loc = locale as "tr" | "en";
 
   return (

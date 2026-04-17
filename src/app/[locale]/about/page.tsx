@@ -2,29 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { pageMeta } from '../metadata';
-
-const team = [
-  {
-    name: "V. Saltuntaş",
-    role: { tr: "Kurucu & Direktör", en: "Founder & Director" },
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-  },
-  {
-    name: "Ece Yıldız",
-    role: { tr: "A&R & Yayın", en: "A&R & Publishing" },
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80",
-  },
-  {
-    name: "Emre Kaya",
-    role: { tr: "Baş Mühendis", en: "Chief Engineer" },
-    photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80",
-  },
-  {
-    name: "Selin Demir",
-    role: { tr: "Etkinlik Direktörü", en: "Events Director" },
-    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80",
-  },
-];
+import { getTeam } from "@/lib/content";
 
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -41,6 +19,7 @@ export default async function AboutPage({
   setRequestLocale(locale);
   const t = await getTranslations("pages.about");
   const loc = locale as "tr" | "en";
+  const team = getTeam();
 
   return (
     <>
@@ -73,7 +52,7 @@ export default async function AboutPage({
           <h2 className="section-title mb-16">{t("team")}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {team.map((m) => (
-              <div key={m.name}>
+              <div key={m.slug}>
                 <div className="relative aspect-[3/4] overflow-hidden rounded-xl mb-4">
                   <Image
                     src={m.photo}

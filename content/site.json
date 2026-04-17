@@ -1,0 +1,20 @@
+{
+  "name": "Zaruret Records",
+  "tagline": {
+    "tr": "Bağımsız bir müzik evi.",
+    "en": "An independent music house."
+  },
+  "email": "info@zaruretrecords.com",
+  "demoEmail": "demo@zaruretrecords.com",
+  "phone": "+90 212 000 00 00",
+  "address": {
+    "tr": "Istanbul, Türkiye",
+    "en": "Istanbul, Türkiye"
+  },
+  "socials": {
+    "instagram": "",
+    "youtube": "",
+    "spotify": ""
+  },
+  "heroImage": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=2000&q=80"
+}

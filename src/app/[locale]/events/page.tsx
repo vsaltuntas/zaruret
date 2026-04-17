@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { events } from "@/lib/mock-data";
+import { getEvents, getArtists } from "@/lib/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { Calendar, MapPin, Ticket } from "lucide-react";
 import { pageMeta } from '../metadata';
@@ -21,6 +21,10 @@ export default async function EventsPage({
   const t = await getTranslations("pages.events");
   const tSec = await getTranslations("sections");
 
+  const events = getEvents();
+  const artists = getArtists();
+  const artistName = (slug: string) =>
+    artists.find((a) => a.slug === slug)?.name ?? slug;
   const upcoming = events.filter((e) => e.status === "upcoming");
   const past = events.filter((e) => e.status === "past");
 
@@ -69,7 +73,7 @@ export default async function EventsPage({
                       {e.title}
                     </h3>
                     <div className="text-sm text-fg-muted">
-                      {e.artists.join(" · ")}
+                      {e.artistSlugs.map(artistName).join(" · ")}
                     </div>
                   </div>
                   {e.ticketUrl && (

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { artists, releases, news } from "@/lib/mock-data";
+import { getArtists, getReleases, getNews } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: p === "" ? 1 : 0.7,
       });
     }
-    for (const a of artists) {
+    for (const a of getArtists()) {
       entries.push({
         url: `${base}${prefix}/roster/${a.slug}`,
         lastModified: now,
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
       });
     }
-    for (const r of releases) {
+    for (const r of getReleases()) {
       entries.push({
         url: `${base}${prefix}/releases/${r.slug}`,
         lastModified: new Date(r.date),
@@ -47,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
       });
     }
-    for (const n of news) {
+    for (const n of getNews()) {
       entries.push({
         url: `${base}${prefix}/news/${n.slug}`,
         lastModified: new Date(n.date),

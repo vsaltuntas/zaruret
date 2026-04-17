@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
-import { artists } from "@/lib/mock-data";
+import type { Artist } from "@/lib/content";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ArrowUpRight } from "lucide-react";
 
-export function FeaturedArtists() {
+export function FeaturedArtists({ artists }: { artists: Artist[] }) {
   const t = useTranslations("sections");
   const featured = artists.slice(0, 4);
 

@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { releases } from "@/lib/mock-data";
+import { getReleases, getArtists } from "@/lib/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { pageMeta } from '../metadata';
 
@@ -20,7 +20,9 @@ export default async function ReleasesPage({
   setRequestLocale(locale);
   const t = await getTranslations("pages.releases");
 
-  const sorted = [...releases].sort((a, b) => b.date.localeCompare(a.date));
+  const sorted = getReleases();
+  const artistName = (slug: string) =>
+    getArtists().find((a) => a.slug === slug)?.name ?? slug;
 
   return (
     <>
@@ -42,7 +44,7 @@ export default async function ReleasesPage({
                 </div>
                 <div className="text-sm font-medium truncate">{r.title}</div>
                 <div className="text-xs text-fg-muted mt-1 flex items-center justify-between">
-                  <span className="truncate">{r.artist}</span>
+                  <span className="truncate">{artistName(r.artistSlug)}</span>
                   <span className="uppercase tracking-wider text-[10px]">{r.type} · {r.year}</span>
                 </div>
               </Link>

@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { news } from "@/lib/mock-data";
+import { getNews } from "@/lib/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { ArrowUpRight } from "lucide-react";
 import { pageMeta } from '../metadata';
@@ -22,6 +22,7 @@ export default async function NewsPage({
   const t = await getTranslations("pages.news");
   const loc = locale as "tr" | "en";
   const localeStr = locale === "tr" ? "tr-TR" : "en-US";
+  const news = getNews();
 
   return (
     <>

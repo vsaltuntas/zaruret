@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { artists } from "@/lib/mock-data";
+import { getArtists } from "@/lib/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { ArrowUpRight } from "lucide-react";
 import { pageMeta } from '../metadata';
@@ -20,6 +20,7 @@ export default async function RosterPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("pages.roster");
+  const artists = getArtists();
 
   return (
     <>

@@ -65,3 +65,36 @@ sonraki faz olan Sanity CMS entegrasyonu yapılabilir.
 ## Lisans
 
 © Zaruret Records.
+
+## Admin Panel (CMS)
+
+Site, `content/*.json` dosyalarındaki veriyi okuyor. Yönetim paneli:
+
+**Admin URL:** `/admin` (örn. `https://zaruretrecords.com/admin`)
+
+### Giriş Yöntemi
+
+GitHub Personal Access Token (PAT) ile giriş. Token tarayıcıda saklanır,
+hiçbir yere gönderilmez. Her değişiklik doğrudan GitHub API'ye commit atar →
+site otomatik yeniden derlenir.
+
+### PAT Oluşturma
+
+1. https://github.com/settings/tokens/new?scopes=repo&description=Zaruret%20Admin
+2. Scope: `repo` (zorunlu — yazma izni)
+3. Token'ı `/admin` login ekranına yapıştır
+
+### Yönetilen İçerik
+
+- **Sanatçılar** (`content/artists/`)
+- **Yayınlar** (`content/releases/`)
+- **Etkinlikler** (`content/events/`)
+- **Haberler** (`content/news/`)
+- **Ekip** (`content/team/`)
+- **Görseller:** `public/uploads/` altına yüklenir
+
+### Akış
+
+1. Admin'de ekle/düzenle/sil → GitHub API'ye commit
+2. Push'a bağlı olarak Cloudflare Pages / GitHub Pages rebuild
+3. ~1-2 dk sonra canlıda

@@ -7,6 +7,7 @@ import { Marquee } from "@/components/home/Marquee";
 import { NewsTeaser } from "@/components/home/NewsTeaser";
 import { CTA } from "@/components/home/CTA";
 import { pageMeta } from "./metadata";
+import { getArtists, getReleases, getNews } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -24,15 +25,18 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const artists = getArtists();
+  const releases = getReleases();
+  const news = getNews();
 
   return (
     <>
       <HomeHero />
-      <FeaturedArtists />
-      <LatestReleases />
+      <FeaturedArtists artists={artists} />
+      <LatestReleases releases={releases} artists={artists} />
       <Marquee />
       <Services />
-      <NewsTeaser />
+      <NewsTeaser news={news} />
       <CTA />
     </>
   );
