@@ -1,6 +1,8 @@
 const OWNER = "vsaltuntas";
 const REPO = "zaruret";
-const BRANCH = "main";
+// Site hangi branch'ten build oluyorsa admin de oraya commit atar.
+// CF Pages / GH Pages o branch'i izliyor olmali.
+const BRANCH = "claude/music-label-websites-tHRWw";
 const API = "https://api.github.com";
 
 export type GitHubAuth = {

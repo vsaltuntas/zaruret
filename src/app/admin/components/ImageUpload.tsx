@@ -7,7 +7,7 @@ import { Upload, Loader2, LinkIcon } from "lucide-react";
 
 const OWNER = "vsaltuntas";
 const REPO = "zaruret";
-const BRANCH = "main";
+const BRANCH = "claude/music-label-websites-tHRWw";
 
 export function ImageUpload({
   value,
