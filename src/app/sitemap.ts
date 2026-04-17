@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   for (const locale of locales) {
-    const prefix = locale === "tr" ? "" : `/${locale}`;
+    const prefix = `/${locale}`;
     for (const p of staticPaths) {
       entries.push({
         url: `${base}${prefix}${p}`,

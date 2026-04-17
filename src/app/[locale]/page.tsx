@@ -6,6 +6,16 @@ import { Services } from "@/components/home/Services";
 import { Marquee } from "@/components/home/Marquee";
 import { NewsTeaser } from "@/components/home/NewsTeaser";
 import { CTA } from "@/components/home/CTA";
+import { pageMeta } from "./metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMeta(locale, "home");
+}
 
 export default async function HomePage({
   params,

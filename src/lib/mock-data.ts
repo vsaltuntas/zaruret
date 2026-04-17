@@ -16,6 +16,8 @@ export type Release = {
   date: string;
   type: "single" | "ep" | "album";
   cover: string;
+  spotifyId?: string;
+  youtubeId?: string;
   platforms?: { spotify?: string; apple?: string; youtube?: string; bandcamp?: string };
 };
 

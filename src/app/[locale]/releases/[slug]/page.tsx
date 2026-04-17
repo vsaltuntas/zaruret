@@ -3,9 +3,30 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import { releases } from "@/lib/mock-data";
+import { JsonLd, releaseSchema } from "@/lib/seo";
+import { SpotifyEmbed, YouTubeEmbed } from "@/components/media/SpotifyEmbed";
 
 export async function generateStaticParams() {
   return releases.map((r) => ({ slug: r.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { slug } = await params;
+  const release = releases.find((r) => r.slug === slug);
+  if (!release) return {};
+  return {
+    title: `${release.title} — ${release.artist}`,
+    description: `${release.artist} — ${release.title}. ${release.year} Zaruret Records release.`,
+    openGraph: {
+      title: `${release.title} — ${release.artist}`,
+      description: `${release.artist} — ${release.title}. ${release.year}.`,
+      images: [release.cover],
+    },
+  };
 }
 
 export default async function ReleasePage({
@@ -19,7 +40,9 @@ export default async function ReleasePage({
   if (!release) notFound();
 
   return (
-    <section className="pt-40 pb-24">
+    <>
+      <JsonLd data={releaseSchema(release)} />
+      <section className="pt-40 pb-24">
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className="relative aspect-square overflow-hidden rounded-2xl">
@@ -47,14 +70,24 @@ export default async function ReleasePage({
               {release.artist}
             </Link>
 
-            <div className="mt-12 space-y-4">
+            <div className="mt-12 space-y-6">
+              {release.spotifyId && (
+                <SpotifyEmbed id={release.spotifyId} type={release.type === "single" ? "track" : "album"} />
+              )}
               <div className="flex flex-wrap gap-3">
-                <a className="btn btn-primary" href="#">Spotify</a>
-                <a className="btn btn-outline" href="#">Apple Music</a>
-                <a className="btn btn-outline" href="#">YouTube</a>
-                <a className="btn btn-outline" href="#">Bandcamp</a>
+                <a className="btn btn-primary" href={release.platforms?.spotify ?? "#"} target="_blank" rel="noopener noreferrer">Spotify</a>
+                <a className="btn btn-outline" href={release.platforms?.apple ?? "#"} target="_blank" rel="noopener noreferrer">Apple Music</a>
+                <a className="btn btn-outline" href={release.platforms?.youtube ?? "#"} target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a className="btn btn-outline" href={release.platforms?.bandcamp ?? "#"} target="_blank" rel="noopener noreferrer">Bandcamp</a>
               </div>
             </div>
+
+            {release.youtubeId && (
+              <div className="mt-12">
+                <div className="eyebrow mb-4">Music Video</div>
+                <YouTubeEmbed id={release.youtubeId} title={`${release.title} — ${release.artist}`} />
+              </div>
+            )}
 
             <div className="mt-12 border-t border-border pt-8 text-sm text-fg-muted space-y-2">
               <div className="flex justify-between">
@@ -73,6 +106,7 @@ export default async function ReleasePage({
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

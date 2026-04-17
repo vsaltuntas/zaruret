@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const baseMeta = {
   tr: {
     home: {
-      title: "Zaruret Records — Bağımsız Müzik Evi",
+      title: "Bağımsız Müzik Evi",
       description:
         "Label, stüdyo, yapımcılık ve etkinlik. Zaruret Records bağımsız müziğin çok kollu evi.",
     },
@@ -44,7 +44,7 @@ const baseMeta = {
   },
   en: {
     home: {
-      title: "Zaruret Records — Independent Music House",
+      title: "Independent Music House",
       description:
         "Label, studio, production and events. Zaruret Records is a multi-arm house for independent music.",
     },

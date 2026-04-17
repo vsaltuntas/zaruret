@@ -3,6 +3,13 @@ import Image from "next/image";
 import { events } from "@/lib/mock-data";
 import { PageHero } from "@/components/ui/PageHero";
 import { Calendar, MapPin, Ticket } from "lucide-react";
+import { pageMeta } from '../metadata';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMeta(locale, 'events');
+}
 
 export default async function EventsPage({
   params,

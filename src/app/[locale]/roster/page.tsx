@@ -4,6 +4,13 @@ import { Link } from "@/i18n/routing";
 import { artists } from "@/lib/mock-data";
 import { PageHero } from "@/components/ui/PageHero";
 import { ArrowUpRight } from "lucide-react";
+import { pageMeta } from '../metadata';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMeta(locale, 'roster');
+}
 
 export default async function RosterPage({
   params,

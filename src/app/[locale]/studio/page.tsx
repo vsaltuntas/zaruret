@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { PageHero } from "@/components/ui/PageHero";
+import { pageMeta } from '../metadata';
 
 const equipmentGroups = [
   {
@@ -56,6 +57,12 @@ const gallery = [
   "https://images.unsplash.com/photo-1484755560615-676f2cd74d3e?w=1600&q=80",
   "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=1600&q=80",
 ];
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMeta(locale, 'studio');
+}
 
 export default async function StudioPage({
   params,

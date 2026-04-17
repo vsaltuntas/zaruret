@@ -2,6 +2,13 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/ui/PageHero";
 import { ContactForms } from "@/components/forms/ContactForms";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { pageMeta } from '../metadata';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMeta(locale, 'contact');
+}
 
 export default async function ContactPage({
   params,

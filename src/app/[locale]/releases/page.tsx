@@ -3,6 +3,13 @@ import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { releases } from "@/lib/mock-data";
 import { PageHero } from "@/components/ui/PageHero";
+import { pageMeta } from '../metadata';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMeta(locale, 'releases');
+}
 
 export default async function ReleasesPage({
   params,

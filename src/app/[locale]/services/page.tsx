@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { PageHero } from "@/components/ui/PageHero";
 import { Sliders, Radio, Sparkles, Rocket, ArrowRight } from "lucide-react";
+import { pageMeta } from '../metadata';
 
 const items = [
   {
@@ -37,6 +38,12 @@ const items = [
     },
   },
 ] as const;
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMeta(locale, 'services');
+}
 
 export default async function ServicesPage({
   params,

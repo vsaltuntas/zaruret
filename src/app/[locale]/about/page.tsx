@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
+import { pageMeta } from '../metadata';
 
 const team = [
   {
@@ -24,6 +25,12 @@ const team = [
     photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80",
   },
 ];
+
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMeta(locale, 'about');
+}
 
 export default async function AboutPage({
   params,

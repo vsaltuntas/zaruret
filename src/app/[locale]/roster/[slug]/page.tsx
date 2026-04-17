@@ -4,9 +4,30 @@ import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import { artists, releases } from "@/lib/mock-data";
 import { Instagram, Youtube, Music2, ArrowUpRight } from "lucide-react";
+import { JsonLd, artistSchema } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return artists.map((a) => ({ slug: a.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  const artist = artists.find((a) => a.slug === slug);
+  if (!artist) return {};
+  const loc = locale as "tr" | "en";
+  return {
+    title: artist.name,
+    description: artist.bio[loc],
+    openGraph: {
+      title: `${artist.name} — Zaruret Records`,
+      description: artist.bio[loc],
+      images: [artist.image],
+    },
+  };
 }
 
 export default async function ArtistPage({
@@ -25,6 +46,7 @@ export default async function ArtistPage({
 
   return (
     <>
+      <JsonLd data={artistSchema(artist)} />
       <section className="relative pt-24 min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image

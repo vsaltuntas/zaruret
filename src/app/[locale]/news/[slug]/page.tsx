@@ -8,6 +8,26 @@ export async function generateStaticParams() {
   return news.map((p) => ({ slug: p.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  const post = news.find((p) => p.slug === slug);
+  if (!post) return {};
+  const loc = locale as "tr" | "en";
+  return {
+    title: post.title[loc],
+    description: post.excerpt[loc],
+    openGraph: {
+      title: post.title[loc],
+      description: post.excerpt[loc],
+      images: [post.cover],
+    },
+  };
+}
+
 export default async function NewsPostPage({
   params,
 }: {
