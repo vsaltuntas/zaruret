@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { artists, releases, news } from "@/lib/mock-data";
 
+export const dynamic = "force-static";
+
 const base = "https://zaruretrecords.com";
 const locales = ["tr", "en"] as const;
 const staticPaths = [

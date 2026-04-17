@@ -8,9 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "pages:build": "npx @cloudflare/next-on-pages@1",
-    "pages:preview": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
-    "pages:deploy": "wrangler pages deploy .vercel/output/static"
+    "pages:preview": "npx wrangler pages dev out",
+    "pages:deploy": "npx wrangler pages deploy out"
   },
   "dependencies": {
     "next": "15.5.15",

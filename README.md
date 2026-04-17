@@ -28,9 +28,9 @@ npm run dev
 3. `vsaltuntas/zaruret` reposunu seç
 4. Branch: `claude/music-label-websites-tHRWw` (merge sonrası `main`)
 5. Build settings:
-   - Framework preset: **Next.js**
-   - Build command: `npx @cloudflare/next-on-pages@1`
-   - Build output directory: `.vercel/output/static`
+   - Framework preset: **Next.js (Static HTML Export)** (veya "None")
+   - Build command: `npm run build`
+   - Build output directory: `out`
    - Environment variable: `NODE_VERSION = 20`
 6. **Save and Deploy**
 
