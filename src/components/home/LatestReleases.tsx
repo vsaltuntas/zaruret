@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import Image from "next/image";
 import type { Release, Artist } from "@/lib/content";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ReleaseCover } from "@/components/media/ReleaseCover";
 import { ArrowUpRight } from "lucide-react";
 
 export function LatestReleases({
@@ -52,14 +52,14 @@ export function LatestReleases({
                 className="group block"
               >
                 <div className="relative aspect-square overflow-hidden rounded-xl">
-                  <Image
-                    src={r.cover}
-                    alt={r.title}
-                    fill
+                  <ReleaseCover
+                    cover={r.cover}
+                    title={r.title}
+                    artistName={artistName(r.artistSlug)}
                     sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    imgClassName="group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-xl" />
+                  <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-xl pointer-events-none" />
                 </div>
                 <div className="mt-3">
                   <div className="text-sm font-medium truncate">{r.title}</div>
