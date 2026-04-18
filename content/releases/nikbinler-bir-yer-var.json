@@ -1,0 +1,26 @@
+{
+  "slug": "nikbinler-bir-yer-var",
+  "title": "Bir Yer Var",
+  "artistSlug": "nikbinler",
+  "year": 2025,
+  "date": "2025-01-01",
+  "type": "album",
+  "cover": "/uploads/placeholder-cover.svg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Dönmeyen Hece", "duration": "5:59" },
+    { "title": "Kuşlar da Şaşkın", "duration": "2:53" },
+    { "title": "Bilirim", "duration": "5:09" },
+    { "title": "Ne Varsa", "duration": "4:43" },
+    { "title": "İçimden Şu Zalim Şüpheyi Kaldır", "duration": "6:57" },
+    { "title": "Gönül Çalab'ın Tahtı", "duration": "2:56" },
+    { "title": "Sen De Mi Leyla", "duration": "3:06" },
+    { "title": "Kim Tutabilir", "duration": "3:36" },
+    { "title": "Onlardan Biri", "duration": "4:45" },
+    { "title": "İki Yitik Hasret", "duration": "2:32" },
+    { "title": "Sen De Git", "duration": "3:13" },
+    { "title": "Tanıdık Biri", "duration": "3:04" }
+  ]
+}

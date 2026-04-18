@@ -1,0 +1,19 @@
+{
+  "slug": "sarmal-devran",
+  "title": "Devran",
+  "artistSlug": "sarmal",
+  "year": 2026,
+  "date": "2026-04-17",
+  "type": "ep",
+  "cover": "/uploads/placeholder-cover.svg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Cevher", "duration": "4:12" },
+    { "title": "Damar", "duration": "4:09" },
+    { "title": "Tuz", "duration": "4:03" },
+    { "title": "Duman", "duration": "3:11" },
+    { "title": "Kor", "duration": "3:16" }
+  ]
+}
