@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import { JsonLd, organizationSchema } from "@/lib/seo";
 
@@ -7,6 +7,13 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  axes: ["opsz", "SOFT"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={inter.variable}>
+    <html lang="tr" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
         <JsonLd data={organizationSchema()} />
       </head>
