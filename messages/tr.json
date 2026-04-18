@@ -136,7 +136,11 @@
       "intro": "Demo gönder, stüdyo rezervasyonu yap ya da bize yaz.",
       "tabDemo": "Demo Gönder",
       "tabBooking": "Stüdyo Rezervasyonu",
-      "tabGeneral": "Genel"
+      "tabGeneral": "Genel",
+      "bookingSoonLabel": "YAKINDA",
+      "bookingSoonTitle": "Stüdyo rezervasyonu henüz açık değil.",
+      "bookingSoonBody": "Zaruret Stüdyo şu anda inşa aşamasında. Açılışla birlikte online rezervasyon aktif olacak. O güne kadar bir proje hakkında konuşmak istersen genel iletişim formunu kullanabilirsin.",
+      "bookingSoonCta": "Genel iletişim"
     }
   },
   "form": {
