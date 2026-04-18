@@ -43,11 +43,37 @@ export function Login({ onSuccess }: { onSuccess: () => void }) {
           güvendiğin cihazlarda kullan.
         </p>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-4"
+          action="/admin"
+          method="post"
+        >
+          <input
+            type="text"
+            name="username"
+            value="zaruret-admin"
+            readOnly
+            autoComplete="username"
+            style={{
+              position: "absolute",
+              opacity: 0,
+              height: 0,
+              width: 0,
+              pointerEvents: "none",
+            }}
+            tabIndex={-1}
+            aria-hidden="true"
+          />
           <div>
-            <label className="admin-label">GitHub Token</label>
+            <label htmlFor="zaruret-github-token" className="admin-label">
+              GitHub Token
+            </label>
             <input
+              id="zaruret-github-token"
+              name="password"
               type="password"
+              autoComplete="current-password"
               className="admin-input"
               placeholder="ghp_..."
               value={token}
