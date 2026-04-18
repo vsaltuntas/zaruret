@@ -9,6 +9,7 @@ export type FieldType =
   | "bilingual-text"
   | "bilingual-textarea"
   | "multi-select"
+  | "tracklist"
   | "url";
 
 export type Field = {
@@ -84,6 +85,7 @@ export const schemas: Record<string, Schema> = {
       { name: "platforms.apple", label: "Apple Music URL", type: "url", nested: "platforms" },
       { name: "platforms.youtube", label: "YouTube URL", type: "url", nested: "platforms" },
       { name: "platforms.bandcamp", label: "Bandcamp URL", type: "url", nested: "platforms" },
+      { name: "tracklist", label: "Şarkı Listesi", type: "tracklist" },
     ],
     defaults: {
       slug: "",
@@ -96,6 +98,7 @@ export const schemas: Record<string, Schema> = {
       spotifyId: "",
       youtubeId: "",
       platforms: { spotify: "", apple: "", youtube: "", bandcamp: "" },
+      tracklist: [],
     },
   },
   events: {

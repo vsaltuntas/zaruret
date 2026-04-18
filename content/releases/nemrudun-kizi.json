@@ -1,0 +1,15 @@
+{
+  "slug": "nemrudun-kizi",
+  "title": "Nemrudun Kızı",
+  "artistSlug": "anatolian-lab",
+  "year": 2024,
+  "date": "2024-06-01",
+  "type": "album",
+  "cover": "/uploads/anatolian-lab-02.jpg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Nemrudun Kızı", "duration": "4:51" }
+  ]
+}

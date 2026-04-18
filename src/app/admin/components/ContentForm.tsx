@@ -9,6 +9,7 @@ import { ghGetFile, ghWriteFile, ghListDir } from "../lib/github";
 import { schemas, getByPath, setByPath, type Field } from "../lib/schemas";
 import { ImageUpload } from "./ImageUpload";
 import { GalleryUpload } from "./GalleryUpload";
+import { TracklistEditor } from "./TracklistEditor";
 import { ArrowLeft, Loader2, Save } from "lucide-react";
 
 export function ContentForm({ type, mode }: { type: string; mode: "new" | "edit" }) {
@@ -346,6 +347,18 @@ function FieldRenderer({
         <GalleryUpload
           value={(value as string[]) ?? []}
           onChange={(urls) => onChange(urls)}
+        />
+      </div>
+    );
+  }
+
+  if (field.type === "tracklist") {
+    return (
+      <div>
+        <label className="admin-label">{field.label}{field.required && " *"}</label>
+        <TracklistEditor
+          value={(value as { title: string; duration?: string }[]) ?? []}
+          onChange={(tracks) => onChange(tracks)}
         />
       </div>
     );

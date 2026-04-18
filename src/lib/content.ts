@@ -13,6 +13,11 @@ export type Artist = {
   gallery?: string[];
 };
 
+export type Track = {
+  title: string;
+  duration?: string;
+};
+
 export type Release = {
   slug: string;
   title: string;
@@ -29,6 +34,7 @@ export type Release = {
     youtube?: string;
     bandcamp?: string;
   };
+  tracklist?: Track[];
 };
 
 export type EventItem = {

@@ -1,13 +1,17 @@
 {
   "slug": "anatolian-lab",
-  "name": "Anatolian Lab",
-  "genre": "Anatolian / Electronic",
+  "name": "Anatolian Psych Rock Lab",
+  "genre": "Psychedelic / Anatolian Rock",
   "image": "/uploads/anatolian-lab-01.jpg",
   "bio": {
-    "tr": "Anadolu müziğinin köklerini çağdaş elektronik ve rock sesiyle buluşturan bir laboratuvar. Geleneksel dokuları kulüp enerjisiyle harmanlayan canlı sahne performanslarıyla tanınıyor.",
-    "en": "A laboratory where the roots of Anatolian music meet contemporary electronic and rock. Known for live performances that blend traditional textures with club energy."
+    "tr": "AI destekli psikedelik Anadolu rock coverları. 288K aboneli YouTube kanalı, 200M+ görüntülenme. Geleneksel Anadolu ezgilerini çağdaş psikedelik rock sesiyle yeniden kuran bir laboratuvar.",
+    "en": "AI-assisted psychedelic Anatolian rock covers. A YouTube channel with 288K subscribers and 200M+ views. A laboratory that reimagines traditional Anatolian melodies through a contemporary psychedelic rock lens."
   },
-  "socials": { "instagram": "", "spotify": "", "youtube": "" },
+  "socials": {
+    "instagram": "",
+    "spotify": "",
+    "youtube": ""
+  },
   "gallery": [
     "/uploads/anatolian-lab-01.jpg",
     "/uploads/anatolian-lab-02.jpg",

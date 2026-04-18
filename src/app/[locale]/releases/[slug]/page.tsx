@@ -103,6 +103,12 @@ export default async function ReleasePage({
                 <span className="text-fg-muted">{locale === "tr" ? "Format" : "Format"}</span>
                 <span className="text-fg uppercase">{release.type}</span>
               </div>
+              {release.tracklist && release.tracklist.length > 0 && (
+                <div className="flex justify-between">
+                  <span className="text-fg-muted">{locale === "tr" ? "Şarkı" : "Tracks"}</span>
+                  <span className="text-fg">{release.tracklist.length}</span>
+                </div>
+              )}
               <div className="flex justify-between">
                 <span className="text-fg-muted">Label</span>
                 <span className="text-fg">Zaruret Records</span>
@@ -110,6 +116,30 @@ export default async function ReleasePage({
             </div>
           </div>
         </div>
+
+        {release.tracklist && release.tracklist.length > 0 && (
+          <div className="mt-16 pt-12 border-t border-border">
+            <div className="eyebrow mb-4">{locale === "tr" ? "Şarkı Listesi" : "Tracklist"}</div>
+            <ol className="divide-y divide-border border-y border-border">
+              {release.tracklist.map((track, i) => (
+                <li
+                  key={i}
+                  className="flex items-center gap-4 py-3 text-sm hover:bg-bg-elevated/50 transition-colors px-1"
+                >
+                  <span className="text-fg-muted text-xs tabular-nums w-6 text-right">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex-1 text-fg">{track.title}</span>
+                  {track.duration && (
+                    <span className="text-fg-muted tabular-nums text-xs">
+                      {track.duration}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
       </div>
       </section>
     </>
