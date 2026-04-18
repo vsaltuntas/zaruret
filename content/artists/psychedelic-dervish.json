@@ -1,0 +1,11 @@
+{
+  "slug": "psychedelic-dervish",
+  "name": "Psychedelic Dervish",
+  "genre": "Psychedelic Rock",
+  "image": "https://images.unsplash.com/photo-1520170350707-b2da59970118?w=1200&q=80",
+  "bio": {
+    "tr": "Tasavvuf imgelerini psikedelik rock dokularıyla harmanlayan, dönerek açılan bir sahne evreni yaratan topluluk.",
+    "en": "An ensemble blending Sufi imagery with psychedelic rock textures, building a stage universe that unfolds in circles."
+  },
+  "socials": { "instagram": "", "spotify": "", "youtube": "" }
+}
