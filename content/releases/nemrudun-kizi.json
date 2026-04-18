@@ -10,6 +10,12 @@
   "youtubeId": "",
   "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
   "tracklist": [
-    { "title": "Nemrudun Kızı", "duration": "4:51" }
+    { "title": "Nemrudun Kızı", "duration": "4:51" },
+    { "title": "Beni Candan Usandırdı", "duration": "3:42" },
+    { "title": "Leylim Leylim", "duration": "2:43" },
+    { "title": "Şimdallı", "duration": "3:44" },
+    { "title": "İçmişim Sarhoşum Bugün", "duration": "4:01" },
+    { "title": "Yaralı Gönül (Pulp Fiction Mix) - Remix", "duration": "3:28" },
+    { "title": "Kara Basma İz Olur", "duration": "3:24" }
   ]
 }

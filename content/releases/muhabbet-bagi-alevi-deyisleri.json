@@ -1,0 +1,23 @@
+{
+  "slug": "muhabbet-bagi-alevi-deyisleri",
+  "title": "Muhabbet Bağı - Alevi Deyişleri",
+  "artistSlug": "anatolian-lab",
+  "year": 2024,
+  "date": "2024-01-01",
+  "type": "album",
+  "cover": "/uploads/anatolian-lab-04.jpg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Yola Girme Sen", "duration": "4:33" },
+    { "title": "Haydar Haydar", "duration": "3:27" },
+    { "title": "Sofu Baba", "duration": "3:32" },
+    { "title": "Pirlere Niyaz Ederiz", "duration": "3:36" },
+    { "title": "Beni Beni", "duration": "5:59" },
+    { "title": "Eşrefoğlu Al Haberi", "duration": "3:49" },
+    { "title": "Ben Melamet Hırkasını (Haydar Haydar)", "duration": "4:51" },
+    { "title": "Kerbela Ağıdı", "duration": "3:39" },
+    { "title": "Tevhid (Önüme Bir Çığır Geldi)", "duration": "" }
+  ]
+}

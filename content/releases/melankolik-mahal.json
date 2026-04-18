@@ -1,0 +1,24 @@
+{
+  "slug": "melankolik-mahal",
+  "title": "Melankolik Mahal",
+  "artistSlug": "anatolian-lab",
+  "year": 2024,
+  "date": "2024-01-01",
+  "type": "album",
+  "cover": "/uploads/anatolian-lab-03.jpg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Mahsus Mahal", "duration": "4:21" },
+    { "title": "Acem Kızı", "duration": "5:34" },
+    { "title": "Şu Dağlar Kömürdendir", "duration": "5:35" },
+    { "title": "Bu Şehir Girdap Gülüm", "duration": "6:27" },
+    { "title": "Ha Leyli", "duration": "4:27" },
+    { "title": "Ervah-ı Ezelde", "duration": "5:47" },
+    { "title": "Geceyi Çarmıha Geriyorum", "duration": "6:14" },
+    { "title": "Senelerdir Biçareyim", "duration": "4:01" },
+    { "title": "Çanakkale İçinde", "duration": "4:54" },
+    { "title": "Var Git Ölüm", "duration": "6:02" }
+  ]
+}

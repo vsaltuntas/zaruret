@@ -1,0 +1,21 @@
+{
+  "slug": "koca-tanri",
+  "title": "Koca Tanrı",
+  "artistSlug": "anatolian-lab",
+  "year": 2024,
+  "date": "2024-01-01",
+  "type": "album",
+  "cover": "/uploads/anatolian-lab-05.jpg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Nasip Olur Amasya'ya Varırsan", "duration": "5:38" },
+    { "title": "Eyvallah Şahım (Bugün Bize Pir Geldi)", "duration": "4:19" },
+    { "title": "Çeke Çeke Ben Bu Dertten Ölürüm", "duration": "6:11" },
+    { "title": "Hudey Hudey (Allah Allah Desem Gelsem)", "duration": "5:20" },
+    { "title": "Ötme Bülbül Ötme", "duration": "4:26" },
+    { "title": "Hasretin Beni Hasta Eyledi", "duration": "4:48" },
+    { "title": "Koca Tanrı", "duration": "3:40" }
+  ]
+}

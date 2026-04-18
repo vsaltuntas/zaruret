@@ -1,0 +1,19 @@
+{
+  "slug": "sir",
+  "title": "Sır",
+  "artistSlug": "anatolian-lab",
+  "year": 2024,
+  "date": "2024-01-01",
+  "type": "ep",
+  "cover": "/uploads/anatolian-lab-04.jpg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "İnsan İnsan", "duration": "5:49" },
+    { "title": "Geldik Şu Aleme Bir Dost Bulmaya", "duration": "4:05" },
+    { "title": "Nefsini Terk Etmeden Rabbini Arzularsın", "duration": "5:03" },
+    { "title": "Etme", "duration": "5:42" },
+    { "title": "Sevdim Seni Mabuduma", "duration": "3:53" }
+  ]
+}

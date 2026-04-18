@@ -1,0 +1,22 @@
+{
+  "slug": "ben-yoruldum-hayat",
+  "title": "Ben Yoruldum Hayat",
+  "artistSlug": "anatolian-lab",
+  "year": 2024,
+  "date": "2024-01-01",
+  "type": "album",
+  "cover": "/uploads/anatolian-lab-02.jpg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Ben Yoruldum Hayat", "duration": "3:33" },
+    { "title": "Sarı Gelin", "duration": "3:52" },
+    { "title": "Odam Kireç Tutmuyor", "duration": "5:20" },
+    { "title": "Ne Ağlarsın Benim Zülfü Siyahım", "duration": "5:44" },
+    { "title": "Hacel Obası", "duration": "5:13" },
+    { "title": "Pınar Başından Bulanır", "duration": "5:35" },
+    { "title": "Oysa Herkes Öldürür Sevdiğini", "duration": "3:33" },
+    { "title": "İçimden Şu Zalim Şüpheyi Kaldır", "duration": "5:48" }
+  ]
+}
