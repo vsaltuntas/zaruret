@@ -6,8 +6,11 @@ import { getArtists, getArtist, getReleasesByArtist } from "@/lib/content";
 import { Instagram, Youtube, Music2, ArrowUpRight } from "lucide-react";
 import { JsonLd, artistSchema } from "@/lib/seo";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return getArtists().map((a) => ({ slug: a.slug }));
+  const items = getArtists();
+  return items.length > 0 ? items.map((a) => ({ slug: a.slug })) : [{ slug: "__placeholder__" }];
 }
 
 export async function generateMetadata({

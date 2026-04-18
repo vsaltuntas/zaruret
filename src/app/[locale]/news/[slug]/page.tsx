@@ -4,8 +4,11 @@ import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import { getNews, getNewsPost } from "@/lib/content";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return getNews().map((p) => ({ slug: p.slug }));
+  const items = getNews();
+  return items.length > 0 ? items.map((p) => ({ slug: p.slug })) : [{ slug: "__placeholder__" }];
 }
 
 export async function generateMetadata({

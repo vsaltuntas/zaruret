@@ -6,8 +6,11 @@ import { getRelease, getReleases, getArtist } from "@/lib/content";
 import { JsonLd, releaseSchema } from "@/lib/seo";
 import { SpotifyEmbed, YouTubeEmbed } from "@/components/media/SpotifyEmbed";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return getReleases().map((r) => ({ slug: r.slug }));
+  const items = getReleases();
+  return items.length > 0 ? items.map((r) => ({ slug: r.slug })) : [{ slug: "__placeholder__" }];
 }
 
 export async function generateMetadata({

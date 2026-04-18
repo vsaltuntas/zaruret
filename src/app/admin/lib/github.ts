@@ -36,7 +36,9 @@ export async function ghGetFile(
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`ghGetFile failed (${res.status}): ${await res.text()}`);
   const data = (await res.json()) as { content: string; sha: string; encoding: string };
-  const decoded = atob(data.content.replace(/\n/g, ""));
+  const b64 = data.content.replace(/\n/g, "");
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  const decoded = new TextDecoder("utf-8").decode(bytes);
   return { content: decoded, sha: data.sha };
 }
 
@@ -64,7 +66,7 @@ export async function ghWriteFile(
 ) {
   const base64 =
     typeof content === "string"
-      ? btoa(unescape(encodeURIComponent(content)))
+      ? bytesToBase64(new TextEncoder().encode(content))
       : bytesToBase64(content);
   const body: Record<string, unknown> = {
     message,
