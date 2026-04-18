@@ -1,8 +1,9 @@
-const OWNER = "vsaltuntas";
-const REPO = "zaruret";
+export const OWNER = process.env.NEXT_PUBLIC_ADMIN_OWNER ?? "vsaltuntas";
+export const REPO = process.env.NEXT_PUBLIC_ADMIN_REPO ?? "zaruret";
 // Site hangi branch'ten build oluyorsa admin de oraya commit atar.
-// CF Pages / GH Pages o branch'i izliyor olmali.
-const BRANCH = "claude/music-label-websites-tHRWw";
+// CF Pages / GH Pages o branch'i izliyor olmali. NEXT_PUBLIC_ADMIN_BRANCH ile
+// override edilebilir; yoksa main'e yazar.
+export const BRANCH = process.env.NEXT_PUBLIC_ADMIN_BRANCH ?? "main";
 const API = "https://api.github.com";
 
 export type GitHubAuth = {

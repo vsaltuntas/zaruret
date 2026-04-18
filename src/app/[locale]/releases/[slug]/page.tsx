@@ -43,10 +43,11 @@ export default async function ReleasePage({
   const release = getRelease(slug);
   if (!release) notFound();
   const artistName = getArtist(release.artistSlug)?.name ?? release.artistSlug;
+  const loc = locale as "tr" | "en";
 
   return (
     <>
-      <JsonLd data={releaseSchema({ ...release, artist: artistName })} />
+      <JsonLd data={releaseSchema({ ...release, artist: artistName }, loc)} />
       <section className="pt-40 pb-24">
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">

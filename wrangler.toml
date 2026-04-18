@@ -1,6 +1,8 @@
 name = "zaruret"
 compatibility_date = "2024-12-30"
+main = "worker/index.ts"
 
 [assets]
 directory = "./out"
 not_found_handling = "404-page"
+binding = "ASSETS"

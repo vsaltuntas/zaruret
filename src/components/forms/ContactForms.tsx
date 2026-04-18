@@ -8,6 +8,7 @@ import { z } from "zod";
 import { cn } from "@/lib/cn";
 
 type TabKey = "demo" | "booking" | "general";
+type SubmitState = "idle" | "success" | "error";
 
 export function ContactForms() {
   const t = useTranslations();
@@ -112,11 +113,18 @@ function Textarea({
   );
 }
 
-function StatusMessage({
-  state,
-}: {
-  state: "idle" | "submitting" | "success" | "error";
-}) {
+function Honeypot({ name = "website", register }: { name?: string; register: (n: string) => object }) {
+  return (
+    <div aria-hidden="true" className="absolute left-[-9999px] top-0 h-0 w-0 overflow-hidden">
+      <label>
+        Website
+        <input type="text" tabIndex={-1} autoComplete="off" {...register(name)} />
+      </label>
+    </div>
+  );
+}
+
+function StatusMessage({ state }: { state: SubmitState }) {
   const t = useTranslations("form");
   if (state === "success")
     return (
@@ -133,29 +141,51 @@ function StatusMessage({
   return null;
 }
 
+async function postContact(payload: Record<string, unknown>): Promise<boolean> {
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
 function DemoForm() {
   const t = useTranslations("form");
+  const [status, setStatus] = useState<SubmitState>("idle");
   const schema = z.object({
     artistName: z.string().min(1, t("required")),
     email: z.string().email(t("invalidEmail")),
     link: z.string().url(t("invalidUrl")),
     message: z.string().min(1, t("required")),
+    website: z.string().optional(),
   });
   type Data = z.infer<typeof schema>;
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<Data>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (_data: Data) => {
-    await new Promise((r) => setTimeout(r, 800));
-    reset();
+  const onSubmit = async (data: Data) => {
+    setStatus("idle");
+    const ok = await postContact({ type: "demo", ...data });
+    if (ok) {
+      setStatus("success");
+      reset();
+    } else {
+      setStatus("error");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 max-w-xl">
+    <form onSubmit={handleSubmit(onSubmit)} className="relative space-y-5 max-w-xl">
+      <Honeypot register={register as unknown as (n: string) => object} />
       <div>
         <FieldLabel>{t("artistName")}</FieldLabel>
         <Input {...register("artistName")} error={errors.artistName?.message} />
@@ -175,34 +205,43 @@ function DemoForm() {
       <button type="submit" disabled={isSubmitting} className="btn btn-primary disabled:opacity-50">
         {isSubmitting ? t("submitting") : t("submit")}
       </button>
-      <StatusMessage state={isSubmitSuccessful ? "success" : isSubmitting ? "submitting" : "idle"} />
+      <StatusMessage state={status} />
     </form>
   );
 }
 
 function GeneralForm() {
   const t = useTranslations("form");
+  const [status, setStatus] = useState<SubmitState>("idle");
   const schema = z.object({
     name: z.string().min(1, t("required")),
     email: z.string().email(t("invalidEmail")),
     subject: z.string().min(1, t("required")),
     message: z.string().min(1, t("required")),
+    website: z.string().optional(),
   });
   type Data = z.infer<typeof schema>;
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<Data>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (_data: Data) => {
-    await new Promise((r) => setTimeout(r, 800));
-    reset();
+  const onSubmit = async (data: Data) => {
+    setStatus("idle");
+    const ok = await postContact({ type: "general", ...data });
+    if (ok) {
+      setStatus("success");
+      reset();
+    } else {
+      setStatus("error");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 max-w-xl">
+    <form onSubmit={handleSubmit(onSubmit)} className="relative space-y-5 max-w-xl">
+      <Honeypot register={register as unknown as (n: string) => object} />
       <div className="grid md:grid-cols-2 gap-5">
         <div>
           <FieldLabel>{t("name")}</FieldLabel>
@@ -224,7 +263,7 @@ function GeneralForm() {
       <button type="submit" disabled={isSubmitting} className="btn btn-primary disabled:opacity-50">
         {isSubmitting ? t("submitting") : t("submit")}
       </button>
-      <StatusMessage state={isSubmitSuccessful ? "success" : isSubmitting ? "submitting" : "idle"} />
+      <StatusMessage state={status} />
     </form>
   );
 }

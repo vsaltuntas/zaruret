@@ -50,7 +50,7 @@ export default async function ArtistPage({
 
   return (
     <>
-      <JsonLd data={artistSchema(artist)} />
+      <JsonLd data={artistSchema(artist, loc)} />
       <section className="relative pt-24 min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image

@@ -2,12 +2,8 @@
 
 import { useState } from "react";
 import { getToken } from "../lib/auth";
-import { ghWriteFile } from "../lib/github";
+import { ghWriteFile, OWNER, REPO, BRANCH } from "../lib/github";
 import { Upload, Loader2, X, GripVertical, LinkIcon } from "lucide-react";
-
-const OWNER = "vsaltuntas";
-const REPO = "zaruret";
-const BRANCH = "claude/music-label-websites-tHRWw";
 
 export function GalleryUpload({
   value,

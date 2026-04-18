@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Instagram, Youtube, Music2, Mail } from "lucide-react";
+import { NewsletterForm } from "./NewsletterForm";
 
 export function Footer() {
   const t = useTranslations();
@@ -49,14 +50,7 @@ export function Footer() {
           <p className="text-sm text-fg-muted mb-4">
             {t("footer.newsletterDesc")}
           </p>
-          <form className="flex gap-2">
-            <input
-              type="email"
-              placeholder={t("footer.emailPlaceholder")}
-              className="flex-1 bg-bg-elevated border border-border rounded-full px-4 py-2 text-sm focus:outline-none focus:border-accent transition-colors"
-            />
-            <button className="btn btn-primary text-xs">{t("footer.subscribe")}</button>
-          </form>
+          <NewsletterForm />
         </div>
       </div>
 

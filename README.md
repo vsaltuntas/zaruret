@@ -55,10 +55,36 @@ messages/               # tr.json, en.json
 verileri burada. Gerçek veriler hazır olduğunda buradan güncellenebilir ya da
 sonraki faz olan Sanity CMS entegrasyonu yapılabilir.
 
+## Form Backend (Cloudflare Worker + Resend)
+
+`/api/contact` ve `/api/newsletter` Worker endpoint'leri `worker/index.ts` içinde.
+Site `wrangler.toml` üstünden Worker + Assets modunda deploy ediliyor.
+
+Canlıda çalışması için CF dashboard → Worker → Settings → Variables:
+
+| Key | Değer |
+|---|---|
+| `RESEND_API_KEY` | Resend hesabından alınan API anahtarı (secret) |
+| `MAIL_FROM` | `Zaruret <noreply@zaruret.com>` (Resend'de domain doğrulanmalı) |
+| `MAIL_TO_INFO` | `info@zaruret.com` |
+| `MAIL_TO_DEMO` | `demo@zaruret.com` |
+| `MAIL_TO_NEWSLETTER` | (opsiyonel, default = info) |
+
+Resend tarafında `zaruret.com` için SPF/DKIM kayıtları Cloudflare DNS'e eklenmeli.
+
+## Admin Panel Env Vars
+
+| Key | Default |
+|---|---|
+| `NEXT_PUBLIC_ADMIN_OWNER` | `vsaltuntas` |
+| `NEXT_PUBLIC_ADMIN_REPO` | `zaruret` |
+| `NEXT_PUBLIC_ADMIN_BRANCH` | `main` |
+
+Feature branch'e commit atmak için CF Pages build environment'ta `NEXT_PUBLIC_ADMIN_BRANCH` ayarla.
+
 ## Sıradaki Fazlar
 
 - Sanity CMS (panelden içerik yönetimi)
-- Form backend (Cloudflare Worker + Resend API → email)
 - Gerçek logo, fotoğraf, hero video
 - Custom domain
 
