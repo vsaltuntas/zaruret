@@ -130,8 +130,8 @@ const team = [
 const site = {
   name: "Zaruret Records",
   tagline: { tr: "Bağımsız bir müzik evi.", en: "An independent music house." },
-  email: "info@zaruretrecords.com",
-  demoEmail: "demo@zaruretrecords.com",
+  email: "info@zaruret.com",
+  demoEmail: "demo@zaruret.com",
   phone: "+90 212 000 00 00",
   address: { tr: "Istanbul, Türkiye", en: "Istanbul, Türkiye" },
   socials: { instagram: "", youtube: "", spotify: "" },

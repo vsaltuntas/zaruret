@@ -31,18 +31,18 @@ export default async function ContactPage({
             <div>
               <div className="eyebrow mb-3">EMAIL</div>
               <a
-                href="mailto:info@zaruretrecords.com"
+                href="mailto:info@zaruret.com"
                 className="flex items-center gap-3 text-fg hover:text-accent transition-colors"
               >
                 <Mail size={16} />
-                info@zaruretrecords.com
+                info@zaruret.com
               </a>
               <a
-                href="mailto:demo@zaruretrecords.com"
+                href="mailto:demo@zaruret.com"
                 className="mt-2 flex items-center gap-3 text-fg hover:text-accent transition-colors"
               >
                 <Mail size={16} />
-                demo@zaruretrecords.com
+                demo@zaruret.com
               </a>
             </div>
 

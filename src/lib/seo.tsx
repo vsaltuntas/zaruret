@@ -4,8 +4,8 @@ export function organizationSchema() {
     "@type": "MusicGroup",
     name: "Zaruret Records",
     alternateName: "Zaruret",
-    url: "https://zaruretrecords.com",
-    logo: "https://zaruretrecords.com/apple-icon.svg",
+    url: "https://zaruret.com",
+    logo: "https://zaruret.com/apple-icon.svg",
     description:
       "Independent music house. Label, studio, production and events.",
     genre: ["Alternative", "Electronic", "Indie", "Rock", "Neo-Soul"],
@@ -36,7 +36,7 @@ export function artistSchema(artist: {
     genre: artist.genre,
     description: artist.bio.en,
     image: artist.image,
-    url: `https://zaruretrecords.com/tr/roster/${artist.slug}/`,
+    url: `https://zaruret.com/tr/roster/${artist.slug}/`,
     recordLabel: {
       "@type": "Organization",
       name: "Zaruret Records",
@@ -69,7 +69,7 @@ export function releaseSchema(release: {
     },
     datePublished: release.date,
     image: release.cover,
-    url: `https://zaruretrecords.com/tr/releases/${release.slug}/`,
+    url: `https://zaruret.com/tr/releases/${release.slug}/`,
     recordLabel: {
       "@type": "Organization",
       name: "Zaruret Records",

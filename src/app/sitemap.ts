@@ -3,7 +3,7 @@ import { getArtists, getReleases, getNews } from "@/lib/content";
 
 export const dynamic = "force-static";
 
-const base = "https://zaruretrecords.com";
+const base = "https://zaruret.com";
 const locales = ["tr", "en"] as const;
 const staticPaths = [
   "",

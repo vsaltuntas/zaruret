@@ -26,7 +26,7 @@ export function Footer() {
             <a href="#" aria-label="Spotify" className="hover:text-accent transition-colors">
               <Music2 size={18} />
             </a>
-            <a href="mailto:info@zaruretrecords.com" aria-label="Email" className="hover:text-accent transition-colors">
+            <a href="mailto:info@zaruret.com" aria-label="Email" className="hover:text-accent transition-colors">
               <Mail size={18} />
             </a>
           </div>
@@ -66,7 +66,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <span>Istanbul</span>
             <span className="text-border">—</span>
-            <span>info@zaruretrecords.com</span>
+            <span>info@zaruret.com</span>
           </div>
         </div>
       </div>

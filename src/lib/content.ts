@@ -138,7 +138,7 @@ export function getSite(): SiteSettings {
     return {
       name: "Zaruret Records",
       tagline: { tr: "", en: "" },
-      email: "info@zaruretrecords.com",
+      email: "info@zaruret.com",
     };
   }
   return JSON.parse(fs.readFileSync(p, "utf8"));

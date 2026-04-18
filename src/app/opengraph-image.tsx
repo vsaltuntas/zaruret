@@ -69,7 +69,7 @@ export default async function Image() {
             color: "#666",
           }}
         >
-          <div>zaruretrecords.com</div>
+          <div>zaruret.com</div>
           <div style={{ color: "#d4af37" }}>✦</div>
         </div>
       </div>

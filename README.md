@@ -35,7 +35,7 @@ npm run dev
 6. **Save and Deploy**
 
 Deploy bitince `https://<proje>.pages.dev` URL'i verilir.
-Custom domain için: Pages projesi → **Custom domains** → `zaruretrecords.com`.
+Custom domain için: Pages projesi → **Custom domains** → `zaruret.com`.
 
 ## Dosya Yapısı
 
@@ -70,7 +70,7 @@ sonraki faz olan Sanity CMS entegrasyonu yapılabilir.
 
 Site, `content/*.json` dosyalarındaki veriyi okuyor. Yönetim paneli:
 
-**Admin URL:** `/admin` (örn. `https://zaruretrecords.com/admin`)
+**Admin URL:** `/admin` (örn. `https://zaruret.com/admin`)
 
 ### Giriş Yöntemi
 

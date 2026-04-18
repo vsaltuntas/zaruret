@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zaruretrecords.com"),
+  metadataBase: new URL("https://zaruret.com"),
   title: {
     default: "Zaruret Records",
     template: "%s — Zaruret Records",
