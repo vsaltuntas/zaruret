@@ -10,6 +10,7 @@ export type Artist = {
   image: string;
   bio: Bilingual;
   socials?: { instagram?: string; spotify?: string; youtube?: string };
+  gallery?: string[];
 };
 
 export type Release = {

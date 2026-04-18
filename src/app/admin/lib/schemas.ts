@@ -5,6 +5,7 @@ export type FieldType =
   | "date"
   | "select"
   | "image"
+  | "gallery"
   | "bilingual-text"
   | "bilingual-textarea"
   | "multi-select"
@@ -42,8 +43,9 @@ export const schemas: Record<string, Schema> = {
       { name: "slug", label: "Slug (URL)", type: "text", required: true, placeholder: "ornek-isim" },
       { name: "name", label: "İsim", type: "text", required: true },
       { name: "genre", label: "Tür", type: "text", required: true },
-      { name: "image", label: "Fotoğraf", type: "image", required: true },
+      { name: "image", label: "Profil Fotoğrafı", type: "image", required: true },
       { name: "bio", label: "Biyografi", type: "bilingual-textarea", required: true },
+      { name: "gallery", label: "Galeri (sahne, stüdyo, vs.)", type: "gallery" },
       { name: "socials.instagram", label: "Instagram", type: "url", nested: "socials" },
       { name: "socials.spotify", label: "Spotify", type: "url", nested: "socials" },
       { name: "socials.youtube", label: "YouTube", type: "url", nested: "socials" },
@@ -54,6 +56,7 @@ export const schemas: Record<string, Schema> = {
       genre: "",
       image: "",
       bio: { tr: "", en: "" },
+      gallery: [],
       socials: { instagram: "", spotify: "", youtube: "" },
     },
   },

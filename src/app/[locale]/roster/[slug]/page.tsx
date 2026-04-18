@@ -112,6 +112,33 @@ export default async function ArtistPage({
         </section>
       )}
 
+      {artist.gallery && artist.gallery.length > 0 && (
+        <section className="section border-t border-border">
+          <div className="container-site">
+            <div className="eyebrow mb-4">GALLERY</div>
+            <h2 className="section-title mb-16">
+              {locale === "tr" ? "Galeri" : "Gallery"}
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {artist.gallery.map((src, i) => (
+                <div
+                  key={`${src}-${i}`}
+                  className="relative aspect-[3/4] overflow-hidden rounded-xl bg-bg-elevated"
+                >
+                  <Image
+                    src={src}
+                    alt={`${artist.name} ${i + 1}`}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="section border-t border-border">
         <div className="container-site">
           <Link
