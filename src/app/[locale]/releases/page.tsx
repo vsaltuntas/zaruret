@@ -38,6 +38,8 @@ export default async function ReleasesPage({
                     cover={r.cover}
                     title={r.title}
                     artistName={artistName(r.artistSlug)}
+                    type={r.type}
+                    year={r.year}
                     sizes="(min-width: 1024px) 25vw, 50vw"
                     imgClassName="group-hover:scale-105 transition-transform duration-700"
                   />

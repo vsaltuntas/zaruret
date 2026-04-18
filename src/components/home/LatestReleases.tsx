@@ -56,6 +56,8 @@ export function LatestReleases({
                     cover={r.cover}
                     title={r.title}
                     artistName={artistName(r.artistSlug)}
+                    type={r.type}
+                    year={r.year}
                     sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
                     imgClassName="group-hover:scale-105 transition-transform duration-700"
                   />

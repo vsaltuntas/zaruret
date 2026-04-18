@@ -55,6 +55,8 @@ export default async function ReleasePage({
               cover={release.cover}
               title={release.title}
               artistName={artistName}
+              type={release.type}
+              year={release.year}
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
             />
