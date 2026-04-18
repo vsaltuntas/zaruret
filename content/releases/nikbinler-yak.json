@@ -1,0 +1,13 @@
+{
+  "slug": "nikbinler-yak",
+  "title": "YAK",
+  "artistSlug": "nikbinler",
+  "year": 2025,
+  "date": "2025-01-01",
+  "type": "single",
+  "cover": "/uploads/placeholder-cover.svg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": []
+}

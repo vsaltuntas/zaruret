@@ -1,0 +1,24 @@
+{
+  "slug": "psychedelic-dervish-desert-tears",
+  "title": "Desert Tears",
+  "artistSlug": "psychedelic-dervish",
+  "year": 2026,
+  "date": "2026-01-01",
+  "type": "album",
+  "cover": "/uploads/placeholder-cover.svg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Salt", "duration": "3:29" },
+    { "title": "Bonewater", "duration": "4:00" },
+    { "title": "Black Amber", "duration": "4:56" },
+    { "title": "Blind", "duration": "3:44" },
+    { "title": "Moor", "duration": "4:48" },
+    { "title": "Flint", "duration": "3:21" },
+    { "title": "Fever Sand", "duration": "3:49" },
+    { "title": "Hollow Root", "duration": "3:58" },
+    { "title": "Tar Breath", "duration": "3:32" },
+    { "title": "Palemud", "duration": "3:39" }
+  ]
+}
