@@ -1,0 +1,11 @@
+{
+  "slug": "nikbinler",
+  "name": "Nikbinler",
+  "genre": "Rock",
+  "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1200&q=80",
+  "bio": {
+    "tr": "Enerjik sahne performansları ve kendine has şarkı yazarlığıyla tanınan rock grubu. Zaruret kadrosunun öne çıkan isimlerinden.",
+    "en": "A rock band known for energetic live performances and distinctive songwriting. One of the defining voices on the Zaruret roster."
+  },
+  "socials": { "instagram": "", "spotify": "", "youtube": "" }
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "sarmal",
+  "name": "Sarmal",
+  "genre": "Alternative",
+  "image": "https://images.unsplash.com/photo-1514533212735-5df27d970db0?w=1200&q=80",
+  "bio": {
+    "tr": "Katmanlı aranjmanları ve sarmal yapılı kompozisyonlarıyla kendine has bir atmosfer kuran topluluk.",
+    "en": "An ensemble crafting a distinctive atmosphere through layered arrangements and spiralling compositions."
+  },
+  "socials": { "instagram": "", "spotify": "", "youtube": "" }
+}

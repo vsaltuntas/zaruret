@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "Home",
+    "roster": "Roster",
+    "releases": "Releases",
+    "studio": "Studio",
+    "services": "Services",
+    "events": "Events",
+    "news": "News",
+    "about": "About",
+    "contact": "Contact",
+    "submitDemo": "Submit Demo"
+  },
+  "hero": {
+    "eyebrow": "MUSIC PRODUCTION — LABEL — STUDIO — EVENTS",
+    "title": "A new necessity of sound.",
+    "subtitle": "We discover artists, shape production, build the stage. A next-generation music house.",
+    "ctaPrimary": "Artists",
+    "ctaSecondary": "Submit Demo"
+  },
+  "sections": {
+    "featuredArtistsTitle": "Featured Artists",
+    "featuredArtistsSubtitle": "Innovative voices on our roster",
+    "latestReleasesTitle": "Latest Releases",
+    "latestReleasesSubtitle": "Freshest cuts from our catalogue",
+    "servicesTitle": "What We Do",
+    "servicesSubtitle": "Music production from four angles",
+    "showreelTitle": "Showreel",
+    "showreelSubtitle": "A curated look at our work",
+    "newsTitle": "News",
+    "newsSubtitle": "Fresh from Zaruret",
+    "seeAll": "See all",
+    "upcomingEvents": "Upcoming Events",
+    "pastEvents": "Past Events"
+  },
+  "services": {
+    "label": {
+      "title": "Label",
+      "desc": "Artist discovery, publishing, A&R and catalogue management."
+    },
+    "studio": {
+      "title": "Studio",
+      "desc": "Professional recording, mixing and mastering facility."
+    },
+    "production": {
+      "title": "Production",
+      "desc": "Single, EP and album production. Arrangement and creative direction."
+    },
+    "events": {
+      "title": "Events",
+      "desc": "Concert and stage production. From booking to live execution."
+    }
+  },
+  "footer": {
+    "tagline": "An independent music house.",
+    "navigation": "Navigate",
+    "social": "Social",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Stay in the loop on new releases and events.",
+    "emailPlaceholder": "Your email",
+    "subscribe": "Subscribe"
+  },
+  "pages": {
+    "roster": {
+      "title": "Roster",
+      "intro": "Innovative voices on the Zaruret roster. Artists who define their own language and push boundaries.",
+      "discography": "Discography",
+      "listen": "Listen"
+    },
+    "releases": {
+      "title": "Releases",
+      "intro": "Every release in our catalogue. Singles, EPs and albums.",
+      "filterAll": "All",
+      "filterSingle": "Single",
+      "filterEP": "EP",
+      "filterAlbum": "Album"
+    },
+    "studio": {
+      "title": "Studio",
+      "intro": "A professional recording environment where analog warmth meets digital precision.",
+      "equipment": "Equipment",
+      "gallery": "Gallery",
+      "bookNow": "Book Now",
+      "mics": "Microphones",
+      "outboard": "Outboard",
+      "monitors": "Monitors",
+      "instruments": "Instruments"
+    },
+    "services": {
+      "title": "Services",
+      "intro": "We're with you at every stage — from idea to release.",
+      "mixing": "Mixing",
+      "mastering": "Mastering",
+      "production": "Production",
+      "aAndR": "A&R & Publishing",
+      "process": "Process",
+      "requestQuote": "Request Quote"
+    },
+    "events": {
+      "title": "Events",
+      "intro": "Zaruret live productions. Concerts, festivals, special nights.",
+      "buyTickets": "Buy Tickets",
+      "soldOut": "Sold Out"
+    },
+    "news": {
+      "title": "News",
+      "intro": "Releases, events and press.",
+      "readMore": "Read More"
+    },
+    "about": {
+      "title": "About",
+      "intro": "Zaruret Records is a multi-arm house for independent music.",
+      "missionTitle": "Mission",
+      "missionBody": "To amplify artists' voices while protecting their creative freedom. A model that blends traditional label structure with the modern independent music economy.",
+      "team": "Team"
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "Submit a demo, book the studio, or drop us a line.",
+      "tabDemo": "Submit Demo",
+      "tabBooking": "Studio Booking",
+      "tabGeneral": "General"
+    }
+  },
+  "form": {
+    "name": "Your name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Your message",
+    "artistName": "Artist name",
+    "link": "Link (SoundCloud, Drive, etc.)",
+    "projectType": "Project type",
+    "preferredDate": "Preferred date",
+    "details": "Details",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "success": "Your message is in. We'll get back to you soon.",
+    "error": "Something went wrong. Please try again.",
+    "required": "This field is required",
+    "invalidEmail": "Enter a valid email",
+    "invalidUrl": "Enter a valid URL"
+  }
+}

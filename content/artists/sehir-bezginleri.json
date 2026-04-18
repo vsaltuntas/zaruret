@@ -1,0 +1,11 @@
+{
+  "slug": "sehir-bezginleri",
+  "name": "Şehir Bezginleri",
+  "genre": "Alternative Rock",
+  "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&q=80",
+  "bio": {
+    "tr": "Şehrin yorgunluğunu, insanın iç çelişkilerini ve uykusuz gecelerin şiirini alternatif rock diliyle anlatan grup.",
+    "en": "A band translating urban fatigue, inner contradictions and the poetry of sleepless nights into the language of alternative rock."
+  },
+  "socials": { "instagram": "", "spotify": "", "youtube": "" }
+}

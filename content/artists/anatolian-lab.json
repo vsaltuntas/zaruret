@@ -1,0 +1,22 @@
+{
+  "slug": "anatolian-lab",
+  "name": "Anatolian Psych Rock Lab",
+  "genre": "Psychedelic / Anatolian Rock",
+  "image": "/uploads/anatolian-lab-01.jpg",
+  "bio": {
+    "tr": "AI destekli psikedelik Anadolu rock coverları. 288K aboneli YouTube kanalı, 200M+ görüntülenme. Geleneksel Anadolu ezgilerini çağdaş psikedelik rock sesiyle yeniden kuran bir laboratuvar.",
+    "en": "AI-assisted psychedelic Anatolian rock covers. A YouTube channel with 288K subscribers and 200M+ views. A laboratory that reimagines traditional Anatolian melodies through a contemporary psychedelic rock lens."
+  },
+  "socials": {
+    "instagram": "",
+    "spotify": "",
+    "youtube": ""
+  },
+  "gallery": [
+    "/uploads/anatolian-lab-01.jpg",
+    "/uploads/anatolian-lab-02.jpg",
+    "/uploads/anatolian-lab-03.jpg",
+    "/uploads/anatolian-lab-04.jpg",
+    "/uploads/anatolian-lab-05.jpg"
+  ]
+}
