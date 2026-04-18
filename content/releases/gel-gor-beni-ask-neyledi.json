@@ -1,0 +1,21 @@
+{
+  "slug": "gel-gor-beni-ask-neyledi",
+  "title": "Gel Gör Beni Aşk Neyledi",
+  "artistSlug": "anatolian-lab",
+  "year": 2024,
+  "date": "2024-01-01",
+  "type": "album",
+  "cover": "/uploads/anatolian-lab-01.jpg",
+  "spotifyId": "",
+  "youtubeId": "",
+  "platforms": { "spotify": "", "apple": "", "youtube": "", "bandcamp": "" },
+  "tracklist": [
+    { "title": "Gelin Ey Âşıklar", "duration": "5:48" },
+    { "title": "Gel Gör Beni Aşk Neyledi", "duration": "3:52" },
+    { "title": "Uyurken Seyrimde Kalktım Ağlayu", "duration": "5:24" },
+    { "title": "Severim Ben Seni", "duration": "3:29" },
+    { "title": "Aşk Bezirganı", "duration": "6:43" },
+    { "title": "Lâ İlâhe İllallah", "duration": "7:51" },
+    { "title": "Göçtü Kervan Kaldık Dağlar Başında", "duration": "7:38" }
+  ]
+}
