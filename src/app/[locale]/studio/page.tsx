@@ -77,6 +77,30 @@ export default async function StudioPage({
     <>
       <PageHero eyebrow="STUDIO" title={t("title")} intro={t("intro")} />
 
+      <section className="pb-10 md:pb-16 -mt-4">
+        <div className="container-site">
+          <div className="rounded-2xl border border-accent/30 bg-accent/5 p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+            <div className="flex items-center gap-3 md:flex-col md:items-start md:gap-4 md:min-w-[180px]">
+              <div className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+              </div>
+              <div className="text-xs uppercase tracking-[0.22em] text-accent font-medium">
+                {t("comingSoonLabel")}
+              </div>
+            </div>
+            <div className="flex-1">
+              <h2 className="h-display text-3xl md:text-4xl leading-tight mb-3">
+                {t("comingSoonTitle")}
+              </h2>
+              <p className="text-fg-muted leading-relaxed max-w-3xl">
+                {t("comingSoonBody")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container-site">
           <div className="eyebrow mb-4">EQUIPMENT</div>
