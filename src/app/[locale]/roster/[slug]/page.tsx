@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import { getArtists, getArtist, getReleasesByArtist } from "@/lib/content";
 import { Instagram, Youtube, Music2, ArrowUpRight } from "lucide-react";
 import { JsonLd, artistSchema } from "@/lib/seo";
+import { ReleaseCover } from "@/components/media/ReleaseCover";
 
 export const dynamicParams = false;
 
@@ -92,12 +93,12 @@ export default async function ArtistPage({
               {discography.map((r) => (
                 <Link key={r.slug} href={`/releases/${r.slug}`} className="group">
                   <div className="relative aspect-square overflow-hidden rounded-xl mb-3">
-                    <Image
-                      src={r.cover}
-                      alt={r.title}
-                      fill
+                    <ReleaseCover
+                      cover={r.cover}
+                      title={r.title}
+                      artistName={artist.name}
                       sizes="(min-width: 1024px) 25vw, 50vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      imgClassName="group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                   <div className="text-sm font-medium">{r.title}</div>

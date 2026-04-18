@@ -1,8 +1,8 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { getReleases, getArtists } from "@/lib/content";
 import { PageHero } from "@/components/ui/PageHero";
+import { ReleaseCover } from "@/components/media/ReleaseCover";
 import { pageMeta } from '../metadata';
 
 
@@ -34,12 +34,12 @@ export default async function ReleasesPage({
             {sorted.map((r) => (
               <Link key={r.slug} href={`/releases/${r.slug}`} className="group">
                 <div className="relative aspect-square overflow-hidden rounded-xl mb-3">
-                  <Image
-                    src={r.cover}
-                    alt={r.title}
-                    fill
+                  <ReleaseCover
+                    cover={r.cover}
+                    title={r.title}
+                    artistName={artistName(r.artistSlug)}
                     sizes="(min-width: 1024px) 25vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    imgClassName="group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="text-sm font-medium truncate">{r.title}</div>

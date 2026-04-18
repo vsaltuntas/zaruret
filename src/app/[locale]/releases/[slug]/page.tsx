@@ -1,10 +1,10 @@
 import { setRequestLocale } from "next-intl/server";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import { getRelease, getReleases, getArtist } from "@/lib/content";
 import { JsonLd, releaseSchema } from "@/lib/seo";
 import { SpotifyEmbed, YouTubeEmbed } from "@/components/media/SpotifyEmbed";
+import { ReleaseCover } from "@/components/media/ReleaseCover";
 
 export const dynamicParams = false;
 
@@ -51,13 +51,12 @@ export default async function ReleasePage({
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className="relative aspect-square overflow-hidden rounded-2xl">
-            <Image
-              src={release.cover}
-              alt={release.title}
-              fill
-              priority
+            <ReleaseCover
+              cover={release.cover}
+              title={release.title}
+              artistName={artistName}
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
+              priority
             />
           </div>
 
