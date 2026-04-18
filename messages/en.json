@@ -136,7 +136,11 @@
       "intro": "Submit a demo, book the studio, or drop us a line.",
       "tabDemo": "Submit Demo",
       "tabBooking": "Studio Booking",
-      "tabGeneral": "General"
+      "tabGeneral": "General",
+      "bookingSoonLabel": "OPENING SOON",
+      "bookingSoonTitle": "Studio booking is not open yet.",
+      "bookingSoonBody": "Zaruret Studio is currently under construction. Online booking will go live with the opening. Until then, feel free to use the general contact form to discuss a project.",
+      "bookingSoonCta": "General contact"
     }
   },
   "form": {

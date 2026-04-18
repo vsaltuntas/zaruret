@@ -39,8 +39,34 @@ export function ContactForms() {
       </div>
 
       {tab === "demo" && <DemoForm />}
-      {tab === "booking" && <BookingForm />}
+      {tab === "booking" && <BookingComingSoon onGeneral={() => setTab("general")} />}
       {tab === "general" && <GeneralForm />}
+    </div>
+  );
+}
+
+function BookingComingSoon({ onGeneral }: { onGeneral: () => void }) {
+  const t = useTranslations("pages.contact");
+  return (
+    <div className="max-w-2xl rounded-2xl border border-accent/30 bg-accent/5 p-8 md:p-10">
+      <div className="flex items-center gap-3 mb-6">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+        </span>
+        <span className="text-xs uppercase tracking-[0.22em] text-accent font-medium">
+          {t("bookingSoonLabel")}
+        </span>
+      </div>
+      <h3 className="h-display text-2xl md:text-3xl mb-4 leading-tight">
+        {t("bookingSoonTitle")}
+      </h3>
+      <p className="text-fg-muted leading-relaxed mb-8">
+        {t("bookingSoonBody")}
+      </p>
+      <button onClick={onGeneral} className="btn btn-outline">
+        {t("bookingSoonCta")}
+      </button>
     </div>
   );
 }
@@ -145,62 +171,6 @@ function DemoForm() {
       <div>
         <FieldLabel>{t("message")}</FieldLabel>
         <Textarea {...register("message")} error={errors.message?.message} />
-      </div>
-      <button type="submit" disabled={isSubmitting} className="btn btn-primary disabled:opacity-50">
-        {isSubmitting ? t("submitting") : t("submit")}
-      </button>
-      <StatusMessage state={isSubmitSuccessful ? "success" : isSubmitting ? "submitting" : "idle"} />
-    </form>
-  );
-}
-
-function BookingForm() {
-  const t = useTranslations("form");
-  const schema = z.object({
-    name: z.string().min(1, t("required")),
-    email: z.string().email(t("invalidEmail")),
-    projectType: z.string().min(1, t("required")),
-    preferredDate: z.string().min(1, t("required")),
-    details: z.string().min(1, t("required")),
-  });
-  type Data = z.infer<typeof schema>;
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
-    reset,
-  } = useForm<Data>({ resolver: zodResolver(schema) });
-
-  const onSubmit = async (_data: Data) => {
-    await new Promise((r) => setTimeout(r, 800));
-    reset();
-  };
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 max-w-xl">
-      <div className="grid md:grid-cols-2 gap-5">
-        <div>
-          <FieldLabel>{t("name")}</FieldLabel>
-          <Input {...register("name")} error={errors.name?.message} />
-        </div>
-        <div>
-          <FieldLabel>{t("email")}</FieldLabel>
-          <Input type="email" {...register("email")} error={errors.email?.message} />
-        </div>
-      </div>
-      <div className="grid md:grid-cols-2 gap-5">
-        <div>
-          <FieldLabel>{t("projectType")}</FieldLabel>
-          <Input placeholder="Recording, Mix, Master…" {...register("projectType")} error={errors.projectType?.message} />
-        </div>
-        <div>
-          <FieldLabel>{t("preferredDate")}</FieldLabel>
-          <Input type="date" {...register("preferredDate")} error={errors.preferredDate?.message} />
-        </div>
-      </div>
-      <div>
-        <FieldLabel>{t("details")}</FieldLabel>
-        <Textarea {...register("details")} error={errors.details?.message} />
       </div>
       <button type="submit" disabled={isSubmitting} className="btn btn-primary disabled:opacity-50">
         {isSubmitting ? t("submitting") : t("submit")}
