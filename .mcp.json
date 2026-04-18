@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hayatos": {
+      "type": "http",
+      "url": "https://hayatos.pages.dev/api/mcp"
+    }
+  }
+}
