@@ -1,11 +1,18 @@
 {
   "slug": "anatolian-lab",
   "name": "Anatolian Lab",
-  "genre": "Anatolian Rock",
-  "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
+  "genre": "Anatolian / Electronic",
+  "image": "/uploads/anatolian-lab-01.jpg",
   "bio": {
-    "tr": "Anadolu müziğinin köklerini çağdaş rock sesiyle buluşturan bir laboratuvar. Geleneksel enstrümanları elektrik dokularla harmanlayan yeni nesil bir topluluk.",
-    "en": "A laboratory where the roots of Anatolian music meet contemporary rock. A new-generation ensemble blending traditional instruments with electric textures."
+    "tr": "Anadolu müziğinin köklerini çağdaş elektronik ve rock sesiyle buluşturan bir laboratuvar. Geleneksel dokuları kulüp enerjisiyle harmanlayan canlı sahne performanslarıyla tanınıyor.",
+    "en": "A laboratory where the roots of Anatolian music meet contemporary electronic and rock. Known for live performances that blend traditional textures with club energy."
   },
-  "socials": { "instagram": "", "spotify": "", "youtube": "" }
+  "socials": { "instagram": "", "spotify": "", "youtube": "" },
+  "gallery": [
+    "/uploads/anatolian-lab-01.jpg",
+    "/uploads/anatolian-lab-02.jpg",
+    "/uploads/anatolian-lab-03.jpg",
+    "/uploads/anatolian-lab-04.jpg",
+    "/uploads/anatolian-lab-05.jpg"
+  ]
 }
