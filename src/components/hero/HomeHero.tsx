@@ -39,11 +39,20 @@ export function HomeHero() {
           <div className="eyebrow mb-6">{t("eyebrow")}</div>
         </motion.div>
 
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+          className="text-2xl md:text-3xl lg:text-4xl text-fg-muted mb-4 max-w-3xl"
+        >
+          {t("tagline")}
+        </motion.p>
+
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="h-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tightest text-balance max-w-5xl"
+          className="h-display text-7xl md:text-9xl lg:text-[12rem] leading-[0.9] tracking-tightest text-balance"
         >
           {t("title")}
         </motion.h1>
