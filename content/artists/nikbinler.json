@@ -1,11 +1,18 @@
 {
   "slug": "nikbinler",
   "name": "Nikbinler",
-  "genre": "Rock",
-  "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1200&q=80",
+  "genre": "Alternative Rock",
+  "image": "/uploads/nikbinler-01.jpg",
   "bio": {
-    "tr": "Enerjik sahne performansları ve kendine has şarkı yazarlığıyla tanınan rock grubu. Zaruret kadrosunun öne çıkan isimlerinden.",
-    "en": "A rock band known for energetic live performances and distinctive songwriting. One of the defining voices on the Zaruret roster."
+    "tr": "Güçlü kadın vokali ve görsel kuvveti yüksek sahne atmosferiyle öne çıkan Nikbinler, şiirsel sözlerini dramatik aranjmanlarla birleştirerek kendine has bir dünya kuruyor.",
+    "en": "Nikbinler stand out with a commanding female vocal and a visually striking stage presence, fusing poetic lyrics with dramatic arrangements to build a world entirely their own."
   },
+  "gallery": [
+    "/uploads/nikbinler-01.jpg",
+    "/uploads/nikbinler-02.jpg",
+    "/uploads/nikbinler-03.jpg",
+    "/uploads/nikbinler-04.jpg",
+    "/uploads/nikbinler-05.jpg"
+  ],
   "socials": { "instagram": "", "spotify": "", "youtube": "" }
 }
